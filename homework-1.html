@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather forecast</title>
+    <style>
+      body {
+        background-color: white;
+      }
+      h1 {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        color: #5c5470;
+        font-size: 35px;
+        padding: 0;
+        line-height: 50px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+
+      h2 {
+        margin: 15px 0;
+        text-align: center;
+        font-size: 34px;
+        line-height: 10px;
+        font-weight: 200;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+
+      ul {
+        list-style: none;
+        text-align: center;
+        margin: 30px 0;
+        display: inline;
+        padding: 0;
+        text-align: center;
+      }
+
+      li {
+        margin: 40px auto;
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: bold;
+        padding: 16px 0;
+        display: list-item;
+        border-radius: 30px;
+        transition: all 100ms ease-in-out;
+        text-align: center;
+        max-width: 350px;
+      }
+
+      li:hover {
+        background-color: rgba(217, 196, 157, 0.17);
+      }
+
+      button {
+        display: block;
+        margin: 30px auto;
+        border-radius: 30px;
+        padding: 15px 25px;
+        color: #ffc93c;
+        background-color: #352f44;
+        border: 2px solid black;
+        box-shadow: 10px 10px 15px rgba(32, 7, 90, 0.529);
+        font-size: 16px;
+        font-family: cursive;
+        transition: all 200ms ease-in-out;
+      }
+
+      button:hover {
+        background-color: rgba(217, 196, 157, 0.301);
+        color: black;
+        font-weight: bolder;
+        font-size: 16px;
+        font-family: cursive;
+        cursor: pointer;
+      }
+
+      button:active {
+        border: 2px solid #b58d28ec;
+      }
+
+      .days {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 25px;
+      }
+
+      .weather-figures {
+        font-family: monospace;
+        color: #5c5470;
+        font-weight: 50;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .bolder {
+        font-weight: 700;
+      }
+
+      .credits {
+        text-align: center;
+        font-size: 20px;
+        font-family: monospace;
+      }
+
+      .emoji {
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      <span class="emoji">☃️ </span><br />
+      Currently 23° in Kumasi
+    </h1>
+    <h2>20° / <span class="bolder">22°</span></h2>
+    <ul>
+      <li>
+        <div class="days">🌥Tomorrow <br /></div>
+        <div class="weather-figures">10° | <span class="bolder">22°</span></div>
+      </li>
+      <li>
+        <div class="days">🌤Tuesday <br /></div>
+        <div class="weather-figures">9° | <span class="bolder">12°</span></div>
+      </li>
+      <li>
+        <div class="days">⛈Wednesday <br /></div>
+        <div class="weather-figures">11° | <span class="bolder">13°</span></div>
+      </li>
+    </ul>
+    <button>Change City</button>
+    <div class="credits">Coded by Jules💖</div>
+
+    <script>
+      let changeButton = document.querySelector("button");
+      let h1 = document.querySelector("h1");
+
+      function changeCity() {
+        let city = prompt("Which city do you live in?");
+        let temp = prompt("What's the temperature?");
+
+        if (temp > 0) {
+          h1.innerHTML = `🌞 <br/> Currently ${temp}°C in ${city}`;
+        } else {
+          h1.innerHTML = `❄️ <br/> Currently ${temp}°C in ${city}`;
+        }
+      }
+
+      changeButton.addEventListener("click", changeCity);
+    </script>
+  </body>
+</html>
